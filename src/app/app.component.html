@@ -1,0 +1,154 @@
+<nav>
+    <div class="navbar-container">
+        <div class="navbar-items">
+            <img class="hamburger pointer" src="../assets/icon-menu.svg" alt="hamburger-menu" (click)="menuMobileToggle()">
+            <img class="sneakers-logo" src="./assets/logo.svg" alt="logo-sneakers">
+            <li class="selection-primary" (click)="openDropdown()">
+                Collections
+                <div id="underline-1"></div>
+            </li>
+            <li class="selection-primary" (click)="openDropdown()">
+                Men
+                <div id="underline-2"></div>
+            </li>
+            <li class="selection-primary" (click)="openDropdown()">
+                Women
+                <div id="underline-3"></div>
+            </li>
+            <li class="selection-primary" (click)="openDropdown()">
+                About
+                <div id="underline-4"></div>
+            </li>
+            <li class="selection-primary" (click)="openContact()">
+                Contact
+                <div id="underline-5"></div>
+            </li>
+        </div>
+        
+        <div class="modalOverlay" [@toggleModal]="mobileMenuState" (click)="menuMobileToggle()"></div>
+        <div class="mobileMenu" [@toggleMenuMobile]="mobileMenuState">
+            <svg [@textDropdownToggle]="mobileMenuState" class="pointer" (click)="menuMobileToggle()" alt="close-icon" width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
+            <li class="selection-primary" [@textDropdownToggle]="mobileMenuState">
+                Collections
+            </li>
+            <li class="selection-primary" [@textDropdownToggle]="mobileMenuState">
+                Men
+                <div id="underline-2"></div>
+            </li>
+            <li class="selection-primary" [@textDropdownToggle]="mobileMenuState">
+                Women
+                <div id="underline-3"></div>
+            </li>
+            <li class="selection-primary" [@textDropdownToggle]="mobileMenuState">
+                About
+                <div id="underline-4"></div>
+            </li>
+            <li class="selection-primary" [@textDropdownToggle]="mobileMenuState">
+                Contact
+                <div id="underline-5"></div>
+            </li>
+        </div>
+        
+        <div class="navbar-profil-cart">
+            <svg class="cursor" alt="cart" id="cart-image" (click)="cartPreviewToggle()" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"/></svg>
+            <div class="nbItemInCartPreview-container" *ngIf="nbItemsInCart !=0">
+                <div class="nbItemInCartPreview" (click)="cartPreviewToggle()">
+                    {{ nbItemsInCart }}
+                </div>
+            </div>
+            <app-cart-preview></app-cart-preview>
+            <img class="cursor" src="./assets/avatar-me.jpg" alt="hero" id="profil" (click)="openProfilSidePanel()">
+            <app-profil *ngIf="profilPanelStatus"></app-profil>
+        </div>
+    </div>
+    <div class="collections-dropdown" [@toggleDropdown]="dropdownState">
+        <ul [@textDropdownToggle]="dropdownState">
+            <li class="title-dropdown">New & Featured</li>
+            <li (click)="changeSNKRS(1)">Fall Limited Edition Sneakers</li>
+            <li (click)="changeSNKRS(2)">Off Noir and Volt</li>
+            <li (click)="changeSNKRS(3)">Air Huarache LE - Praline/Umber</li>
+            <li (click)="changeSNKRS(4)">AIR JORDAN 11 W ANIMAL INSTINCT</li>
+            <li (click)="changeSNKRS(5)">YEEZY BOOST 700 FADE AZURE</li>
+            <li (click)="changeSNKRS(6)">X SPEEDFLOW+ AG</li>
+       </ul>
+       <ul [@textDropdownToggle]="dropdownState">
+            <li class="title-dropdown">New & Featured</li>
+            <li (click)="changeSNKRS(7)">OZELIA</li>
+            <li (click)="changeSNKRS(8)">HARDEN VOL. 5 FUTURENATURAL</li>
+            <li (click)="changeSNKRS(1)">Fall Limited Edition Sneakers</li>
+            <li (click)="changeSNKRS(2)">Off Noir and Volt</li>
+            <li (click)="changeSNKRS(3)">Air Huarache LE - Praline/Umber</li>
+            <li (click)="changeSNKRS(4)">AIR JORDAN 11 W ANIMAL INSTINCT</li>
+        </ul>
+        <ul [@textDropdownToggle]="dropdownState">
+            <li class="title-dropdown">New & Featured</li>
+            <li (click)="changeSNKRS(1)">Fall Limited Edition Sneakers</li>
+            <li (click)="changeSNKRS(2)">Off Noir and Volt</li>
+            <li (click)="changeSNKRS(3)">Air Huarache LE - Praline/Umber</li>
+            <li (click)="changeSNKRS(4)">AIR JORDAN 11 W ANIMAL INSTINCT</li>
+            <li (click)="changeSNKRS(5)">YEEZY BOOST 700 FADE AZURE</li>
+            <li (click)="changeSNKRS(6)">X SPEEDFLOW+ AG</li>
+        </ul>
+        <ul [@textDropdownToggle]="dropdownState">
+            <li class="title-dropdown">New & Featured</li>
+            <li (click)="changeSNKRS(7)">OZELIA</li>
+            <li (click)="changeSNKRS(8)">HARDEN VOL. 5 FUTURENATURAL</li>
+            <li (click)="changeSNKRS(1)">Fall Limited Edition Sneakers</li>
+            <li (click)="changeSNKRS(2)">Off Noir and Volt</li>
+            <li (click)="changeSNKRS(3)">Air Huarache LE - Praline/Umber</li>
+            <li (click)="changeSNKRS(4)">AIR JORDAN 11 W ANIMAL INSTINCT</li>
+        </ul>
+    </div>
+    <div class="collections-dropdown contact" [@toggleContactDropdown]="dropdownStateContact">
+        <ul [@textDropdownToggle]="dropdownStateContact">
+            <li>E-mail : <a href="mailto: lucas.tran@imt-atlantique.net">lucas.tran@imt-atlantique.net</a></li>
+            <li>Linkedin : <a href="https://www.linkedin.com/in/lucas-tran-2b6256200/">https://www.linkedin.com/in/lucas-tran</a></li>
+            <li>Frontend mentor : <a href="https://www.frontendmentor.io/profile/BlueTompon">https://www.frontendmentor.io/profile/BlueTompon</a></li>
+       </ul>
+    </div>
+    <div class="dropdown-overlay" *ngIf="blurState" (click)="closeDropdown()"></div>
+</nav>
+<main [ngClass]="{'blur': blurState === true}">
+    <div class="main-container">
+        <app-item-card class="componnent-show-item"></app-item-card>
+
+        <div class="right-panel">
+            <h2 class="selection-secondary">{{ itemCompanyName }}</h2>
+        
+            <h1 class="selection-primary">{{ itemName }}</h1>
+            <p class="selection-primary">
+                These low-profile sneakers are your perfect casual wear companion. Featuring a 
+                durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+            <div class="price-show-container">
+                <div class="price-show bold">
+                    <span class="selection-primary">${{itemPrice}}.00</span>
+                    <div class="discount bold selection-secondary">50%</div>    
+                </div>
+                <div class="real-price bold selection-primary">${{itemPrice*2}}.00</div>
+            </div>
+            
+            
+            <div class="cart-manager-container bold">
+                <div class="cart-manager-plus-minus">
+                    
+                    <button class="item-minus cursor" (click)="buttonMinus()">
+                        <svg alt="-" width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></svg>
+                        </button>
+                    <div class="selection-primary" id="value-numberOfItemSelected">{{ nbItemSelected }}</div>
+                    <button class="item-plus cursor" (click)="buttonPlus()">
+                        <svg alt="+" width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></svg>
+                    </button>
+                </div>
+                
+                <button class="cursor selection-secondary" (click)="addToCart()">
+                    Add to cart
+                    <div class="shadow"></div>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+    
+</main>

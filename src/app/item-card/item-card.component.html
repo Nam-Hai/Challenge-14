@@ -1,0 +1,65 @@
+<div class="container">
+
+    <div *ngIf="mobileState">
+        <svg (click)="previousImage()" class="btnPreviousNext previous" alt="previous" width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+    </div>
+
+    <img class="card" [src]="mainImageURL" alt="sneaker-1" id="mainImage">
+    
+    <div *ngIf="mobileState">
+        <svg (click)="nextImage()" alt="next" class="btnPreviousNext next" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+
+    </div>
+
+
+    
+    <div class="card-hover" (click)="modalToggle()"></div>
+    
+    <div class="text-scroller-container" >
+        <div class="text-scroller">
+            <span class="text" [ngClass]="{'rapidText': isClicked === true}">SEE SEE SEE SEE&nbsp;</span>
+            <span class="text" [ngClass]="{'rapidText': isClicked === true}">SEE SEE SEE SEE&nbsp;</span>
+        </div>
+        <div class="text-scroller LeftToRight nextLine">
+            <span class="text">SEE SEE SEE SEE&nbsp;</span>
+            <span class="text">SEE SEE SEE SEE&nbsp;</span>
+        </div>
+        <div class="text-scroller nextLine">
+            <span class="text">SEE SEE SEE SEE&nbsp;</span>
+            <span class="text">SEE SEE SEE SEE&nbsp;</span>
+        </div>
+        <div class="text-scroller LeftToRight nextLine">
+            <span class="text">SEE SEE SEE SEE&nbsp;</span>
+            <span class="text">SEE SEE SEE SEE&nbsp;</span>
+        </div>
+        <div class="text-scroller nextLine">
+            <span class="text">SEE SEE SEE SEE&nbsp;</span>
+            <span class="text">SEE SEE SEE SEE&nbsp;</span>
+        </div>
+    </div>
+</div>
+
+<div  class="modalOverlay" *ngIf="modalState && !mobileState" (click)="modalToggle()" [@toggleModal]="modalState">
+</div>
+<div class="modal" *ngIf="(modalState && !mobileState)">
+    <div class="card-container" [@toggleModal]="modalState">
+        <div>
+            <svg (click)="previousImage()" class="btnPreviousNext previous" alt="previous" width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+        </div>
+
+        <img class="cardModal" [src]="mainImageURL" alt="sneaker-1" id="mainImage">
+        
+        <div>
+            <svg (click)="nextImage()" alt="next" class="btnPreviousNext next" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+
+        </div>
+    </div>
+    <div class="thumbnail" [@toggleModal]="modalState">
+        <app-thumbnail  *ngFor="let image of imageJSON" [id]="image.id" [urlThumbnail]='image.urlThumbnail' [selected]="image.selected"></app-thumbnail>
+    </div>
+</div>
+
+
+<div class="thumbnail" *ngIf="!mobileState">
+    <app-thumbnail  *ngFor="let image of imageJSON" [id]="image.id" [urlThumbnail]='image.urlThumbnail' [selected]="image.selected"></app-thumbnail>
+</div>

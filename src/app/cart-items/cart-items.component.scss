@@ -1,0 +1,40 @@
+$margin: 0.8rem;
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-bottom: $margin;
+
+    .cart-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .itemSpec{
+        width: calc( 100% - 3.5rem - 10px );
+
+        span {
+            font-weight: 700;
+            color: #1d2025;
+        }
+    }
+    img {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 4px;
+        margin-right: 1rem;
+    }
+
+    svg {
+        width: 14px;
+        height: 16px;
+        cursor: pointer;
+    }
+    
+}

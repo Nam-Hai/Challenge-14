@@ -1,0 +1,75 @@
+<div class="sidepanel" [@toggleDisplay]="isOpen">
+    <div class="container">
+        <div class="before"></div>
+        <span><div *ngFor="let letter of portfolio; let index = index" [@letterAnimation]="{value: titleStarter, params: {'delay': index * 100}}">{{letter}}</div></span>
+        <div class="separator" [@separator]="{value: titleStarter, params: {'delay': 1200}}"></div>
+    
+        <div class="profil-main">
+            <div class="scrolling-pic">
+                
+                <div class="scroll-container scrollleft">
+                    <img src="../assets/profil_scrolling.jpg" alt="profil-assets">
+                    <img src="../assets/profil-scrolling-2.jpg" alt="profil-assets">
+                    <img src="../assets/profil-scrolling-3.jpg" alt="profil-assets">
+                </div>
+                <div class="scroll-container scrollleft">
+                    <img src="../assets/profil_scrolling.jpg" alt="profil-assets">
+                    <img src="../assets/profil-scrolling-2.jpg" alt="profil-assets">
+                    <img src="../assets/profil-scrolling-3.jpg" alt="profil-assets">
+                </div>
+            </div>
+            <div class="cache">
+                <div class="cache2" [@cache2]="cache2State">
+                    <div>Lucas TRAN is a 22 years old french develepper. </div>
+                    <div class="flex-end">angular, Gsap</div>
+                    <div>self-taught</div>
+                    <div style="letter-spacing: 1.67rem; white-space: nowrap;">SECOND YEAR</div>
+                    <div style="letter-spacing: 1.7rem;">engineering</div>
+                </div>
+                <div class="cache3" (mouseleave)="onLeave()" (mouseenter)="onEnter()"></div>
+            </div>
+            <div class="scrolling-pic">
+                
+                <div class="scroll-container scrollright">
+                    <img src="../assets/cover1.jpg" alt="profil-assets">
+                    <img src="../assets/cover2.jpg" alt="profil-assets">
+                    <img src="../assets/cover3.jpg" alt="profil-assets">
+                    <img src="../assets/cover4.jpg" alt="profil-assets">
+                    <img src="../assets/cover5.jpg" alt="profil-assets">
+                    <img src="../assets/cover6.jpg" alt="profil-assets">
+                </div>
+                <div class="scroll-container scrollright">
+                    <img src="../assets/cover1.jpg" alt="profil-assets">
+                    <img src="../assets/cover2.jpg" alt="profil-assets">
+                    <img src="../assets/cover3.jpg" alt="profil-assets">
+                    <img src="../assets/cover4.jpg" alt="profil-assets">
+                    <img src="../assets/cover5.jpg" alt="profil-assets">
+                    <img src="../assets/cover6.jpg" alt="profil-assets">
+
+                </div>
+            </div>
+            <div class="cache">
+                <div class="cache2" [@cache2]="cache2State">
+                    <div class="imt">student at IMT Atlantique</div>
+                    <br>
+                    <div class="text-center">Also music producer as a hobby</div>
+            </div>
+                <div class="cache3" (mouseleave)="onLeave()" (mouseenter)="onEnter()"></div>
+            </div>
+        </div>
+        
+        <div class="contact" (click)="contactActionner()">CONTACT ME</div>
+        
+    </div>
+
+    <div class="contactSection" [@contact]="contactState">
+        <a href="https://www.linkedin.com/in/lucas-tran-2b6256200/">LINKEDIN </a>
+        <a href="mailto: lucas.tran@imt-atlantique.net">MAIL</a>
+        <a href="https://www.frontendmentor.io/profile/BlueTompon">FRONTEND MENTOR</a>
+    </div>
+</div>
+
+<div class="sidePanelOverlay" (click)="closeDisplay()" [@toggleDisplayOverlay]="isOpen">
+    
+</div>
+

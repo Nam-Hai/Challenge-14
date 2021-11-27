@@ -1,0 +1,16 @@
+<div class="container" [@testClic]="cartState">
+    <div class="cart-header">
+        <h3>Cart</h3>
+        <img src="../assets/icon-close.svg" alt="closeCart" (click)="closeCartPreview()">
+    </div>
+    
+    <div class="separator"></div>
+    <div class="cart-container">
+        <div class="empty-cart" *ngIf='isEmpty'>Your cart is empty</div>
+        <div class="filled-cart" *ngIf='!isEmpty'>
+            <app-cart-items *ngFor="let item of curCartJSON | slice:1" [itemName]='item.name' [itemPrice]="item.price" [itemNb]="item.numberSelected" [itemTotalPrice]="item.price * item.numberSelected" [url]="item.urlThumbnail" [itemId]="item.id"></app-cart-items>
+            <button class="buttonGetCartEmpty" (click)="getCartEmpty()">Checkout</button>
+        </div>
+    </div>
+    
+</div>

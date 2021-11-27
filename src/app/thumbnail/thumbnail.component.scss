@@ -1,0 +1,44 @@
+:root{
+    --primary: hsl(26, 100%, 55%);
+}
+
+.container {
+    position: relative;
+    height: 5rem;
+    width: 5rem;
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: 0.7rem;
+        border: solid 2px transparent;
+        transition: 120ms;
+    
+        position: absolute;
+        z-index: 5;
+    }
+    &:hover {
+        .shadow {
+            background-color: rgba(255, 255, 255, 0.253);
+            border: solid 2px white;
+            z-index: 800;
+        }
+    }
+
+    .shadow {
+        content: "";
+        background-color: transparent;
+        border: solid 2px transparent;
+        border-radius: 0.7rem;
+        height: 5rem;
+        width: 5rem;
+        position: absolute;
+        z-index: 4;
+        
+        &.selected {
+            background-color: rgba(255, 255, 255, 0.685);
+            border: solid 2px var(--primary);
+            z-index: 6;
+        }
+    }
+    
+}

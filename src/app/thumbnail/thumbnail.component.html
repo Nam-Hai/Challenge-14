@@ -1,0 +1,5 @@
+<div class="container">
+    <img [id]="id" [src]="this.urlThumbnail" [alt]="this.urlThumbnail" [ngClass]="{'selected': selected === true}" >
+
+    <div class="shadow" (click)="onClick()" [ngClass]="{'selected': selected === true}"></div>
+</div>

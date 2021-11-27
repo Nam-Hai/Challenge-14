@@ -1,0 +1,95 @@
+:root {
+    --primary: orange;
+    --primary-dull: orange;
+}
+
+$pale-orange: hsl(25, 100%, 94%);
+$very-dark-blue: hsl(220, 13%, 13%);
+$dark-blue: hsl(219, 9%, 45%);
+$grey-blue: hsl(220, 14%, 75%);
+$light-grey: hsl(223, 64%, 98%);
+
+.container {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-50%);
+    position: relative;
+    background: white;
+    box-shadow: 0rem 2rem 3rem 0rem hsla(217, 9%, 45%, 0.5);
+    width: 20rem;
+    left: -12rem;
+    top: 3rem;
+    border-radius: 0.7rem;
+
+    .separator {
+        width: 100%;
+        height: 1px;
+        background-color: #dbdbdb;
+    }
+    .cart-header {
+        padding: 1rem 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        h3 {
+            color: $very-dark-blue;
+            font-size: 1rem;
+        }
+
+        img {
+            width: 14px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+    }
+
+    .cart-container {
+        
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+
+        .filled-cart {
+            height: 100%;
+            width: 100%;
+
+            button {
+                width: 100%;
+                height: 2.5rem;
+                cursor: pointer;
+                background-color: var(--primary);
+                color: white;
+                border: solid 4px var(--primary);
+                border-radius: 0.5rem;
+                transition: background-color 300ms, border 300ms;
+                &:hover {
+                    background-color: var(--primary-dull);
+                    border: solid 4px var(--primary-dull);
+                    transition: background-color 300ms, border 600ms;
+                }
+            }
+        }
+    }
+    
+}
+
+app-cart-items {
+    height: 100%;
+    width: 100%;
+    
+}
+
+@media screen and (max-width:850px){
+    .container {
+        width: 95vw;
+        max-width: 90vw;
+        left: unset;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+}
