@@ -236,9 +236,37 @@
 }
 
 @media screen and (max-width: 850px) {
-    .sidepanel > .container > span {
-        div {
-            font-size: 4rem;
+    .sidepanel {
+        max-width: 100%;
+    }
+    .sidepanel > .container{
+
+        > span {
+            div {
+                font-size: 2rem;
+            }
+        }
+
+        .separator {
+            width: 12.5rem!important;
+        }
+
+        .cache {
+            .cache2{
+                div {
+                    width: 20rem;
+                }
+
+                div:nth-child(4){
+                    letter-spacing: 0.74rem!important;
+                }
+            }
+
+            .cache2 {
+                .text-center {
+                    font-size: 1.5rem;
+                }
+            }
         }
     }
 }
