@@ -56,7 +56,7 @@ import { AppService } from '../services/app.service';
 })
 export class ProfilComponent implements OnInit{
 
-  portfolio: string[] = ["P","O","R","T",'F','O','L','I','O'];
+  portfolio: string[] = ["P","R","E","S","E","N","T","A","T","I","O","N"];
   titleStarter: boolean = false;
   isOpen: boolean | undefined;
 

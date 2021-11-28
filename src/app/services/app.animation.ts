@@ -14,7 +14,7 @@ export const Animations = [
     trigger('separator', [
         state('true', 
             style({
-                width: '30.5rem'
+                width: '32.5rem'
             }),
         ),
         state('false', 

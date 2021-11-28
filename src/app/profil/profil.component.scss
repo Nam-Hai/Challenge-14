@@ -36,7 +36,7 @@
                 position: relative;
                 font-family: 'Cinzel', serif;
                 font-weight: 600;
-                font-size: 5rem;
+                font-size: 4rem;
                 display: inline-block;
                 top: 4.9rem;
                 z-index: 0;
@@ -59,7 +59,7 @@
             top: -1rem;
             height: 2px;
             background-color: white;
-            width: 30rem;
+            width: 32.5rem;
             z-index: 2;
             margin-bottom: 2rem;
         }
@@ -240,7 +240,7 @@
         max-width: 100%;
     }
     .sidepanel > .container{
-
+        padding: 2rem;
         > span {
             div {
                 font-size: 2rem;
@@ -248,17 +248,21 @@
         }
 
         .separator {
-            width: 12.5rem!important;
+            width: 16.5rem!important;
         }
 
         .cache {
             .cache2{
                 div {
                     width: 20rem;
+                    font-size: 1.2rem;
                 }
 
                 div:nth-child(4){
-                    letter-spacing: 0.74rem!important;
+                    letter-spacing: 1.15rem !important;
+                }
+                div:nth-child(5){
+                    letter-spacing: 1.17rem !important;
                 }
             }
 
@@ -266,7 +270,13 @@
                 .text-center {
                     font-size: 1.5rem;
                 }
+
+
+                .imt {
+
+                }
             }
+            
         }
     }
 }
